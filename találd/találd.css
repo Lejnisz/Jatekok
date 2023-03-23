@@ -1,0 +1,86 @@
+html{
+    background-color: white;
+}
+
+button{
+    width: 5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    margin: 1.5rem;
+    height: 1.5rem;
+    }
+
+.konténer{
+    width: 50%;
+    height: 25rem;
+    margin: auto;
+    text-align: center;
+    animation: háttér 5s infinite;
+    background-size: 200%;
+    box-shadow:5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to right, #0033FF, #00FFFF, #00FF66, #FFFF33);
+}
+
+input[type="tel"]{
+    position: relative;
+    margin: 0.5rem;
+    border: none;
+    transition: all 0.5s;
+    animation: rezgés 0.8s;
+    animation-play-state: paused;
+    animation-iteration-count:1;
+    animation-delay: -0.5;
+    right: 0;
+}
+
+input[type="tel"]:invalid{
+    animation-play-state: running;
+    border: 0.2rem solid red;
+}
+
+@keyframes rezgés {
+    0%{right: 0;}
+    33%{right: -30px}
+    66%{right: 30px}
+    100%{right: 0}
+}
+
+
+
+@keyframes háttér {
+    0%{background-position: 0%, 0%;}
+    25%{background-position: 50%, 0%;}
+    50%{background-position: 25%, 0%;}
+    75%{background-position: 75%, 0%;}
+    100%{background-position: 0%, 0%;}
+}
+
+p{
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width:600px){
+    html{
+        margin: 0;
+        background-image: linear-gradient(#0033FF, white 54%,  #0033FF);
+        animation: háttér-2 5s;
+    }
+    .konténer{
+        box-shadow: none;
+        border-width: 0;
+        width: 80%;
+        background: none;
+    }
+    .bevitel{
+        border-radius: 100vw;
+        padding: 3px;
+        margin: 2%;
+    }
+    p{
+        color: white;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+}
